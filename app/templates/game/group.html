@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Hunted Game - Group register{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Welcome to Hunted game</h1>
+    <h3>Now, please register your group</h3>
+</div>
+{{ wtf.quick_form(form) }}
+{% endblock %}

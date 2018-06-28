@@ -28,7 +28,26 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a class="navbar-brand" href="{{ url_for('main.index') }}">Map</a> </li>
+                {% if current_user.is_authenticated %}
+                <li><a class="navbar-brand" href="{{ url_for('game.group') }}">Game</a> </li>
+                {% if name %}
+                <li><a href="{{ url_for('game.group') }}">{{ name }} Team</a> </li>
+                {% endif %}
+                {% endif %}
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                {% if current_user.is_authenticated %}
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('auth.change_password') }}">Change Password</a></li>
+                        <li><a href="{{ url_for('auth.change_email_request') }}">Change Email</a></li>
+                        <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+                    </ul>
+                </li>
+                {% else %}
+                <li><a href="{{ url_for('auth.login') }}">Log In</a></li>
+                {% endif %}
             </ul>
         </div>
     </div>
@@ -46,3 +65,8 @@
     {% block page_content %}{% endblock %}
 </div>
 {% endblock %}
+
+{#{% block scripts %}#}
+{#{{ super() }}#}
+{#{{ moment.include_moment() }}#}
+{#{% endblock %}#}
