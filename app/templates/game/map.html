@@ -1,14 +1,54 @@
 {% extends "base.html" %}
 {#{% import "bootstrap/wtf.html" as wtf %}#}
+{% block scripts %}
+{{ super() }}
+{{ moment.include_moment() }}
+{% endblock %}
+{% block title %}Hunted Game Map{% endblock %}
 
-{% block title %}Hunted Game{% endblock %}
 
 {% block page_content %}
 <div class="page-header">
-    <h1>This page is showing map {{ name }}</h1>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.5/leaflet.css" />
+	<link rel="stylesheet" href="../../static/css/Logo.css" />
+
+
+    <div id="map" style="position:absolute;top:60px;bottom:0;left:100px;right:300px;"></div>
+	<div id="logo"></div>
+    <button type="button" style="position:absolute;top:80px;left:10px;">Marker1</button>
+    <button type="button" style="position:absolute;top:120px;left:10px;">Marker2</button>
+    <button type="button" style="position:absolute;top:160px;left:10px;">Marker3</button>
+    <button type="button" style="position:absolute;top:200px;left:10px;">Marker4</button>
+
+    <div style="position:absolute;top:60px;right: 20px">
+{#        <label for="msg">Message:</label>#}
+        <textarea id="msg" style="width: 270px;height: 800px">GPS signal</textarea>
+{#        <canvas id="myCanvas" width="250" height="800" style="border:3px solid #000000;"></canvas>#}
+
+{#        <script type="text/javascript">#}
+{#            var c=document.getElementById("myCanvas");#}
+{#            var cxt=c.getContext("2d");#}
+            {#cxt.fillStyle="#FF0000";#}
+            {#cxt.fillRect(0,0,150,75);#}
+{##}
+{#        </script>#}
+    </div>
+
+	<script src="../../static/OS_API_KEY.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.4.3/proj4.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.1/proj4leaflet.js"></script>
+	<script type="text/javascript" src="../../static/js/map.js"></script>
+
+
 
 {#    <p>The local date and time is {{ moment(current_time).format('LLL') }}.</p>#}
 {#    <p>That was {{ moment(current_time).fromNow(refresh=True) }}</p>#}
 </div>
 {#{{ wtf.quick_form(form) }}#}
 {% endblock %}
+
+
+

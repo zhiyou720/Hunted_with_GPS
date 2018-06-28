@@ -31,7 +31,7 @@
                 {% if current_user.is_authenticated %}
                 <li><a class="navbar-brand" href="{{ url_for('game.group') }}">Game</a> </li>
                 {% if name %}
-                <li><a href="{{ url_for('game.group') }}">{{ name }} Team</a> </li>
+                <li><a href="{{ url_for('game.map') }}">{{ name }} Team</a> </li>
                 {% endif %}
                 {% endif %}
             </ul>
