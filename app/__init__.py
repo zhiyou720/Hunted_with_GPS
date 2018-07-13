@@ -35,4 +35,8 @@ def create_app(config_name):
     from .game import game as game_blueprint
     app.register_blueprint(game_blueprint, url_prefix='/game')
 
+    if app.config['SSL_REDIRECT']:
+        from flask_sslify import SSLify
+        sslify = SSLify(app)
+
     return app
