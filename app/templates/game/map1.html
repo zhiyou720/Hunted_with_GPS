@@ -18,7 +18,10 @@
 	<script type="text/javascript" src="../../static/js/map2.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
-        var socket = io.connect(location.protocol + '//' + document.domain );
+        var socket = io.connect(location.protocol + '//' + document.domain);
+        socket.on('connect', function() {
+		socket.send('User has connected!'+ location.port + document.domain);
+	    });
         socket.on('message', function(msg) {
             $("#messages").append('<li>'+msg+'</li>');
             console.log('Received message');
