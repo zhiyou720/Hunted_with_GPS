@@ -2,9 +2,17 @@ import os
 from app import create_app, db
 from app.models import User, Role
 from flask_migrate import Migrate, upgrade
+from flask_socketio import SocketIO, send
 
 app = create_app(os.getenv('FLASK_CONFIG') or 'default')
 migrate = Migrate(app, db)
+socketio = SocketIO(app)
+
+
+@socketio.on('message')
+def handle_message(message):
+    print('received message: ' + message)
+    send(message, broadcast=True)
 
 
 @app.shell_context_processor
@@ -27,11 +35,11 @@ def deploy():
     upgrade()
 
 
-# from app import socketserver
-#
-# while True:
-#     conn, addr = socketserver.s.accept()
-#     print('Connected by', addr)
-#     socketserver.OneClient(conn, addr).start()
+if __name__ == '__main__':
+    socketio.run(app)
+
+
+
+
 
 

@@ -7,7 +7,7 @@ from .forms import GroupForm
 @game.route('/map')
 @login_required
 def map():
-    return render_template('game/map.html', name=session.get('name'))
+    return render_template('game/map1.html', name=session.get('name'))
 
 
 @game.route('/group', methods=['GET', 'POST'])
@@ -17,4 +17,4 @@ def group():
     session['name'] = form.name.data
     if form.name.data is None:
         return render_template('game/group.html', form=form)
-    return render_template('game/map.html', name=form.name.data)
+    return render_template('game/map1.html', name=form.name.data)

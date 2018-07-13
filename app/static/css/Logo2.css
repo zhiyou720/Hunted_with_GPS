@@ -1,0 +1,11 @@
+#logo {
+    position: absolute;
+    bottom: 10px;
+    left: 310px;
+    background: url("images/os-logo.png");
+    width: 198px;
+    height: 48px;
+}
+#area {
+
+}
