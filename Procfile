@@ -1,1 +1,1 @@
-web: gunicorn hunted:app $PORT
+web: gunicorn hunted:app
