@@ -3,6 +3,8 @@
 Use pip install requirements.txt to install packages.
 
 ## run application
+
+$cd Hunted_with_GPS  
 $export FLASK_APP=hunted.py  
 $export FLASK_DEBUG=1  
 $flask run  
