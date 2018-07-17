@@ -7,4 +7,4 @@ $export FLASK_APP=hunted.py
 $export FLASK_DEBUG=1  
 $flask run  
 
-Then localhost:5000
+Then http://localhost:5000
