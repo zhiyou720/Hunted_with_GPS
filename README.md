@@ -3,8 +3,8 @@
 Use pip install requirements.txt to install packages.
 
 ## run application
-$export FLASK_APP=hunted.py
-$export FLASK_DEBUG=1
-$flask run
+$export FLASK_APP=hunted.py  
+$export FLASK_DEBUG=1  
+$flask run  
 
 Then localhost:5000
