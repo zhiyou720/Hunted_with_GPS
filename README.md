@@ -22,5 +22,5 @@ $docker run --name hunted -d -p 8000:5000 -e SECRET_KEY=5a8b9f1b2fc9459a8c162888
 
 ## test User name and password
 
-Username: 1213@qq.com
+Username: 1213@qq.com  
 password: cat
