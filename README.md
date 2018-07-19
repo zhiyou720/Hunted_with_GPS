@@ -1,6 +1,7 @@
 # Hunted_with_GPS
 
-Use pip install requirements.txt to install packages.
+## enviroment setup
+
 
 ## run application
 
