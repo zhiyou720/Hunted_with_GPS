@@ -2,6 +2,8 @@
 
 ## enviroment setup
 
+$cd Hunted_with_GPS
+$pip install -r requirements_test.txt
 
 ## run application
 
