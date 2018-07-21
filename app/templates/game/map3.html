@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>Hunted Map</title>
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.5/leaflet.css" />
+	<link rel="stylesheet" href="../../static/css/Logo2.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+</head>
+<body>
+    <div id="map" style="position:absolute;top:0;bottom:0;left:300px;right:100px;"></div>
+	<div id="logo"></div>
+	<script src="../../static/OS_API_KEY.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.4.3/proj4.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.1/proj4leaflet.js"></script>
+	<script type="text/javascript" src="../../static/js/map2.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port);
+        socket.on('message', function(msg) {
+            $("#messages").append('<li>'+msg+'</li>');
+            console.log('Received message');
+        });
+
+    });
+    </script>
+
+    <h5 id="messages"></h5>
+
+
+    <button type="button" style="position:absolute;top:20px;right:20px;">Marker1</button>
+</body>
+</html>

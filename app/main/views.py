@@ -27,7 +27,7 @@
 #         # if old_name is not None and old_name != form.name.data:
 #         #     flash('Looks like you have changed your name!')
 #         # session['name'] = form.name.data
-#     return render_template('index.html', current_time=datetime.utcnow(), name=session.get('name'), form=form,
+#     return render_template('map1.html', current_time=datetime.utcnow(), name=session.get('name'), form=form,
 #                            known=session.get('known', False))
 
 

@@ -1,0 +1,36 @@
+body, html{
+    font-family: georgia, garamond, serif; 
+    background-color: #F0F0F0;
+    padding: 0;
+    margin: 0;
+}
+
+.content{
+    max-width:100%;
+    background-color: #FFF; 
+}
+
+.map{
+    height: 850px; 
+    cursor: pointer;
+}
+
+table{
+    border-collapse:collapse;
+    background-color: #BADCDC;
+    margin: 1em auto;
+    width:90%; 
+}
+
+td{
+    border: 1px solid white; 
+    padding: 3px 5px;
+}
+
+td.fixed{
+    width:20%;
+}
+ 
+.elev {
+    font-weight: bold
+}

@@ -35,6 +35,9 @@ COPY hunted.py config.py boot.sh ./
 USER root
 RUN chmod 777 ./boot.sh
 RUN chmod +x ./boot.sh
+# php env
+#FROM php:7.0-apache
+#COPY ./ /var/www/html/
 
 USER hunted
 # run-time configuration
